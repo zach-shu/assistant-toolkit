@@ -379,13 +379,13 @@ From you CloudPak cluster, you need to provision a watsonx Assistant instance an
     name: ${WA_INSTANCE}
     patchType: patchStrategicMerge
     patch:
-      webhooks-connector:
+      incoming-webhooks:
         deployment:
           spec:
             template:
               spec:
                 containers:
-                - name: webhooks-connector
+                - name: incoming-webhooks
                   env:
                   - name: CERTIFICATES_IMPORT_LIST
                     value: /etc/secrets/kafka/ca.pem:kafka_ca,/etc/secrets/custom/ca.pem:custom_ca
@@ -403,13 +403,13 @@ From you CloudPak cluster, you need to provision a watsonx Assistant instance an
                     secretName: ${WA_INSTANCE}-custom-webhooks-cert
   EOF
   ```
-  Please wait a few minutes for the `wa-webhooks-connector` pod to restart, which will happen automatically
+  Please wait a few minutes for the `wa-incoming-webhooks` pod to restart, which will happen automatically
   due to the changes applied by the patch. This will take a few minutes or slightly longer. Please be patient.  
 
-  After the pod has restarted, check the logs by running `oc logs wa-webhooks-connector-xxxx`.
+  After the pod has restarted, check the logs by running `oc logs wa-incoming-webhooks-xxxx`.
   You should see two lines like this at the beginning of the log:
   ```
-  [watson@dvt-001-inf ~]$ oc -n ${WA_NAMESPACE} logs wa-webhooks-connector-74756c6748-cmdr6
+  [watson@dvt-001-inf ~]$ oc -n ${WA_NAMESPACE} logs wa-incoming-webhooks-74756c6748-cmdr6
   Certificate was added to keystore
   Certificate was added to keystore
   ```
