@@ -180,7 +180,7 @@ In a new terminal window with `ES_CLUSTER` and `ES_NAMESPACE` available as envir
 steps to create environment variables for later use.  
 * Download TLS certificate and create an environment variable for it
   ```shell
-  oc -n ${ES_NAMESPACE} get secret "${ES_CLUSTER}-es-http-certs-public" -o go-template='{{index .data "tls.crt" | base64 --decode }}' > tls.crt
+  oc -n ${ES_NAMESPACE} get secret "${ES_CLUSTER}-es-http-certs-public" -o go-template='{{index .data "tls.crt"}}' | base64 --decode > tls.crt
   
   export ES_CACERT="tls.crt"
   ```
