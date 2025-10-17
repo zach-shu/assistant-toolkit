@@ -28,12 +28,14 @@ The username for Milvus service has this format: `ibmlhapikey_<your watsonx.data
 | watsonx.data username | Milvus username |
 | -- | -- |
 | `abc@ibm.com` | `ibmlhapikey_abc@ibm.com` |
-| serviceid-abcdef-123456 | ibmlhapikey_serviceid-abcdef-123456 |
+| `serviceid-abcdef-123456` | `ibmlhapikey_serviceid-abcdef-123456` |
 
-1. If your watsonx.data username is an email address `abc@ibm.com`, your Milvus username will be `ibmlhapikey_abc@ibm.com`
-2. If your watsonx.Data username is a service_id `serviceid-abcdef-123456`, your Milvus username will be `ibmlhapikey_serviceid-abcdef-123456`.
+Note: The default Milvus username `ibmlhapikey` has been deprecated since watsonx.data 2.2.0 and will be removed in 2.2.2
 
-The default username `ibmlhapikey` has been deprecated since 2.2.0 and will be removed in 2.2.2
+If you don't know your watsonx.data username, here are the steps to find it on your watsonx.data console:
+1. Go to the `Infrastructure manager` page.
+2. Click on your Milvus service to open the service `Details` page.
+3. Go to the `Access control` tab, and your will see the watsonx.data usernames in the first column of the table.
 
 #### Password
 IBM API key is used as the password for the Milvus service on watsonx.data. There are two options to get the API key to access watsonx.data:
