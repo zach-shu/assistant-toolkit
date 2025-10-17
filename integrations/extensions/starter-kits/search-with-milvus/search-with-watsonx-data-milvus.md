@@ -27,7 +27,7 @@ The username for Milvus service has this format: `ibmlhapikey_<your watsonx.data
 
 | watsonx.data username | Milvus username |
 | -- | -- |
-| abc@ibm.com | ibmlhapikey_abc@ibm.com |
+| `abc@ibm.com` | `ibmlhapikey_abc@ibm.com` |
 | serviceid-abcdef-123456 | ibmlhapikey_serviceid-abcdef-123456 |
 
 1. If your watsonx.data username is an email address `abc@ibm.com`, your Milvus username will be `ibmlhapikey_abc@ibm.com`
